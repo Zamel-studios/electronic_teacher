@@ -1,0 +1,33 @@
+name: electronic_teacher
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0+1 # Added build number for easier version tracking
+
+environment:
+  sdk: '>=3.0.0 <4.0.0' # More flexible SDK constraint
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # flutter_pdfview: ^1.4.0
+  provider: ^6.1.2
+  syncfusion_flutter_pdfviewer: ^28.1.41
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0 # Updated to a more recent version (or latest if needed)
+
+flutter:
+  fonts:
+    - family: Cairo # Give your font a name (Font Family)
+      fonts:
+        - asset: assets/Cairo-Bold.ttf
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/pdfs/chemistry12.pdf
+
+# Example of including all assets in a directory (Optional but recommended)
+#  assets:
+#    - assets/images/
