@@ -10,7 +10,12 @@ dependencies:
   flutter:
     sdk: flutter
   # flutter_pdfview: ^1.4.0
+  flutter_colorpicker: ^1.1.0
+  flutter_downloader: ^1.12.0
+  path_provider: ^2.1.5
+  permission_handler: ^11.3.1
   provider: ^6.1.2
+  # pspdfkit_flutter: ^4.1.1
   syncfusion_flutter_pdfviewer: ^28.1.41
 
 dev_dependencies:

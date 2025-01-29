@@ -1,4 +1,5 @@
 import 'package:electronic_teacher/models/book_model.dart';
+import 'package:electronic_teacher/providers/download_pdf.dart';
 import 'package:electronic_teacher/views/constants/font_styles.dart';
 import 'package:electronic_teacher/views/screens/viewPdf.dart';
 import 'package:electronic_teacher/views/widgets/awesome_button.dart';
@@ -44,7 +45,10 @@ class ViewSubjectOptions extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     AwesomeButton(
-                        buttonText: "تحميل  \nالكتاب", onPressed: () {}),
+                        buttonText: "تحميل  \nالكتاب", onPressed: () {
+                         downloadFileFromAssets('assets/pdfs/chemistry12.pdf' );
+                           
+                        }),
                     const SizedBox(
                       width: 30,
                     ),
