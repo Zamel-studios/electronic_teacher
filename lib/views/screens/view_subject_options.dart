@@ -46,7 +46,7 @@ class ViewSubjectOptions extends StatelessWidget {
                   children: [
                     AwesomeButton(
                         buttonText: "تحميل  \nالكتاب", onPressed: () {
-                         downloadFileFromAssets('assets/pdfs/chemistry12.pdf' );
+                         downloadFileFromAssets('assets/pdfs/chemistry12.pdf', context );
                            
                         }),
                     const SizedBox(
