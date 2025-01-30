@@ -101,13 +101,13 @@ class HomePage extends StatelessWidget {
                       gridItem(
                           context: context,
                           nav: 'Screen3',
-                          image: 'assets/grade9.png',
+                          image: 'assets/grade11.png',
                           title: '',
                           gradeNumber: 11),
                       gridItem(
                           context: context,
                           nav: 'Screen3',
-                          image: 'assets/grade10.png',
+                          image: 'assets/grade12.png',
                           title: '',
                           gradeNumber: 12),
                     ],

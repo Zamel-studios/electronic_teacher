@@ -7,12 +7,13 @@ import '../screens/view_subject_options.dart';
 class SubjectCard extends StatelessWidget {
   final String title;
   final String imagePath;
-  final BookTypeEn bookTypeEn;
+  // final BookTypeEn bookTypeEn;
+  final int gradNumber;
   const SubjectCard({
     Key? key,
     required this.title,
     this.imagePath = 'assets/teacher.png',
-    required this.bookTypeEn, // Make sure to add your actual image path
+    required this.gradNumber, // Make sure to add your actual image path
   }) : super(key: key);
 
   void pushToViewSubject(context, String path) {
@@ -20,30 +21,58 @@ class SubjectCard extends StatelessWidget {
         context,
         MaterialPageRoute(
             builder: (context) => ViewSubjectOptions(
-                  bookModel: BookModel(path, title, bookTypeEn),
+                  bookModel: BookModel(path, title, gradNumber),
                   image_path: imagePath,
                 )));
-                print("\n ${path}");
+    print("\n ${path}");
+  }
+
+  void handleSubjectSelection(String subject, BuildContext context) {
+    String ASSET_PATH = "assets/pdfs/g$gradNumber";
+    switch (subject) {
+      case "الجغرافيا":
+        pushToViewSubject(context, "$ASSET_PATH/geography/");
+        break;
+      case "التاريخ":
+        pushToViewSubject(context, "$ASSET_PATH/history/");
+        break;
+      case "الكيمياء":
+        pushToViewSubject(context, "$ASSET_PATH/chemistry/");
+        break;
+      case "الفيزياء":
+        pushToViewSubject(context, "$ASSET_PATH/physics/");
+        break;
+      case "الرياضيات":
+        pushToViewSubject(context, "$ASSET_PATH/math/");
+        break;
+      case "الأحياء":
+        pushToViewSubject(context, "$ASSET_PATH/biology/");
+        break;
+      case "اللغة العربية":
+        pushToViewSubject(context, "$ASSET_PATH/arabic/");
+        break;
+      case "اللغة الإنجليزية":
+        pushToViewSubject(context, "$ASSET_PATH/english/");
+        break;
+      case "الديانة الاسلامية":
+        pushToViewSubject(context, "$ASSET_PATH/religion/");
+        break;
+      case "الفلسفة":
+        pushToViewSubject(context, "$ASSET_PATH/phylosophy/");
+        break;
+      // case "علم الاجتماع":
+      //   pushToViewSubject(context, "$ASSET_PATH/");
+      //   break;
+      default:
+        print('Subject not found or not applicable for the 12th grade.');
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        switch (title) {
-          case "الجغرافيا":
-            pushToViewSubject(context, "assets/pdfs/chemistry12.pdf");
-
-            break;
-          case "التاريخ":
-            pushToViewSubject(context, "assets/pdfs/religion12.pdf");
-            break;
-          case "الكيمياء":
-            pushToViewSubject(context, "assets/pdfs/chemistry12.pdf");
-
-            break;
-          default:
-        }
+        handleSubjectSelection(title, context);
       },
       child: Card(
         color: const Color.fromARGB(135, 215, 246, 179),

@@ -1,10 +1,10 @@
 name: electronic_teacher
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0+1 # Added build number for easier version tracking
 
 environment:
-  sdk: '>=3.0.0 <4.0.0' # More flexible SDK constraint
+  sdk: ">=3.0.0 <4.0.0" # More flexible SDK constraint
 
 dependencies:
   flutter:
@@ -31,7 +31,27 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
-    - assets/pdfs/chemistry12.pdf
+    - assets/pdfs/g7/
+    - assets/pdfs/g8/
+    - assets/pdfs/g9/
+    - assets/pdfs/g10/
+    - assets/pdfs/g11/
+    - assets/pdfs/g12/chemistry/book.pdf
+    - assets/pdfs/g12/chemistry/solutions.pdf
+    - assets/pdfs/g12/physics/book.pdf
+    - assets/pdfs/g12/physics/solutions.pdf
+    - assets/pdfs/g12/religion/solutions.pdf
+    - assets/pdfs/g12/religion/book.pdf
+    - assets/pdfs/g12/biology/book.pdf
+    - assets/pdfs/g12/biology/solutions.pdf
+    - assets/pdfs/g12/math/solutions.pdf
+    - assets/pdfs/g12/math/book.pdf
+    - assets/pdfs/g12/arabic/book.pdf
+    - assets/pdfs/g12/history/book.pdf
+    - assets/pdfs/g12/history/solutions.pdf
+
+
+
 
 # Example of including all assets in a directory (Optional but recommended)
 #  assets:

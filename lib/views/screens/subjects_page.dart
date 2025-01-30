@@ -6,9 +6,10 @@ import 'package:flutter/material.dart';
 class SubjectsPage extends StatelessWidget {
   final int gradeNumber;
   const SubjectsPage({super.key, required this.gradeNumber});
-
+  // HERE WE CHOOSE THE SUBJECTS DEPENDING ON TH STUDENT GRADE
   @override
   Widget build(BuildContext context) {
+    int getGradeNumber = gradeNumber;
     return SafeArea(
       child: Scaffold(
           body: Container(
@@ -36,46 +37,47 @@ class SubjectsPage extends StatelessWidget {
                       child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ListView(
-                      children: const [
+                      children: [
                         SubjectCard(
+                          gradNumber: getGradeNumber,
                           title: " الجغرافيا",
-                          imagePath: "assets/social.png",                          bookTypeEn: BookTypeEn.READ_BOOK,
-
+                          imagePath: "assets/social.png",
+                          // add gradeNumber
                         ),
                         SubjectCard(
+                          gradNumber: getGradeNumber,
                           title: "التاريخ",
-                          imagePath: "assets/history.png",                          bookTypeEn: BookTypeEn.READ_BOOK,
-
+                          imagePath: "assets/history.png",
                         ),
                         SubjectCard(
+                          gradNumber: getGradeNumber,
                           title: "اللغة العربية",
-                          imagePath: "assets/arabic.png",                          bookTypeEn: BookTypeEn.READ_BOOK,
-
+                          imagePath: "assets/arabic.png",
                         ),
                         SubjectCard(
+                          gradNumber: getGradeNumber,
                           title: "الديانة الاسلامية",
-                          imagePath: "assets/religion.png",                          bookTypeEn: BookTypeEn.READ_BOOK,
-
+                          imagePath: "assets/religion.png",
                         ),
                         SubjectCard(
                           title: "الرياضيات",
-                          imagePath: "assets/math.png",                          bookTypeEn: BookTypeEn.READ_BOOK,
-
+                          imagePath: "assets/math.png",
+                          gradNumber: getGradeNumber,
                         ),
                         SubjectCard(
                           title: "الفيزياء",
-                          imagePath: "assets/physics.png",                          bookTypeEn: BookTypeEn.READ_BOOK,
-
+                          imagePath: "assets/physics.png",
+                          gradNumber: getGradeNumber,
                         ),
                         SubjectCard(
                           title: "الكيمياء",
-                          imagePath: "assets/chemistry.png",                          bookTypeEn: BookTypeEn.READ_BOOK,
-
+                          imagePath: "assets/chemistry.png",
+                          gradNumber: getGradeNumber,
                         ),
                         SubjectCard(
                           title: "الأحياء",
                           imagePath: "assets/biology.png",
-                          bookTypeEn: BookTypeEn.READ_BOOK,
+                          gradNumber: getGradeNumber,
                         ),
                       ],
                     ),

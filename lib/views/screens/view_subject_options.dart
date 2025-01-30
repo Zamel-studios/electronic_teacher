@@ -1,6 +1,7 @@
 import 'package:electronic_teacher/models/book_model.dart';
 import 'package:electronic_teacher/providers/download_pdf.dart';
 import 'package:electronic_teacher/views/constants/font_styles.dart';
+// import 'package:electronic_teacher/views/screens/quiz_page.dart';
 import 'package:electronic_teacher/views/screens/viewPdf.dart';
 import 'package:electronic_teacher/views/widgets/awesome_button.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class ViewSubjectOptions extends StatelessWidget {
   Widget build(BuildContext context) {
     // String subjectName = subject_name;
     // String imagePath = image_path;
+
     return SafeArea(
         child: Scaffold(
       body: Scaffold(
@@ -45,16 +47,26 @@ class ViewSubjectOptions extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     AwesomeButton(
-                        buttonText: "تحميل  \nالكتاب", onPressed: () {
-                         downloadFileFromAssets('assets/pdfs/chemistry12.pdf', context );
-                           
+                        buttonText: "تحميل  \nالكتاب",
+                        onPressed: () {
+                          downloadFileFromAssets(
+                              '${bookModel.book_path}book.pdf', context);
+                          print('-');
+                          print('${bookModel.book_path}book.pdf');
                         }),
                     const SizedBox(
                       width: 30,
                     ),
                     AwesomeButton(
-                        buttonText: "قراءة  \nالكتاب", onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (c)=>ViewPdf(bookModel: bookModel,)));
+                        buttonText: "قراءة  \nالكتاب",
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (c) => ViewPdf(
+                                        bookModel: bookModel,
+                                        actionType: ActionTypeEn.READ_BOOK,
+                                      )));
                         }),
                   ],
                 ),
@@ -62,9 +74,34 @@ class ViewSubjectOptions extends StatelessWidget {
                   height: 20,
                 ),
                 Center(
-                  child: AwesomeButton(
-                      buttonText: "حلول  \nالكتاب", onPressed: () {}),
-                )
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      AwesomeButton(
+                          buttonText: "حلول  \nالكتاب",
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (c) => ViewPdf(
+                                          actionType: ActionTypeEn.READ_SOLUTIONS,
+                                          bookModel: bookModel,
+                                        )));
+                          }),
+                      // const SizedBox(
+                      //   width: 30,
+                      // ),
+                      // AwesomeButton(
+                      //     buttonText: "اختبر \n نفسك ",
+                      //     onPressed: () {
+                      //       Navigator.push(
+                      //           context,
+                      //           MaterialPageRoute(
+                      //               builder: (c) =>  QuizPage()));
+                      //     }),
+                    ],
+                  ),
+                ),
               ],
             )),
       ),

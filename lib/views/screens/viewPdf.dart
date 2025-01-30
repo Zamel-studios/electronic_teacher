@@ -2,9 +2,13 @@ import 'package:electronic_teacher/models/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
+enum ActionTypeEn { READ_BOOK, READ_SOLUTIONS }
+
 class ViewPdf extends StatelessWidget {
-  final BookModel bookModel ;
-    ViewPdf({Key? key, required this.bookModel}) : super(key: key);
+  final BookModel bookModel;
+  final ActionTypeEn actionType;
+  ViewPdf({Key? key, required this.bookModel, required this.actionType})
+      : super(key: key);
 
   final GlobalKey<SfPdfViewerState> _pdfViewerKey = GlobalKey();
 
@@ -12,7 +16,7 @@ class ViewPdf extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:   Text('${bookModel.book_name}'),
+        title: Text('${bookModel.book_name}'),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.refresh),
@@ -22,8 +26,12 @@ class ViewPdf extends StatelessWidget {
           )
         ],
       ),
+      //    bookModel.book_path = "${bookModel.book_path}solutions.pdf";
+
       body: SfPdfViewer.asset(
-        "${bookModel.book_path}",
+        actionType == ActionTypeEn.READ_BOOK
+            ? "${bookModel.book_path}book.pdf"
+            : "${bookModel.book_path}solutions.pdf",
         key: _pdfViewerKey,
       ),
     );

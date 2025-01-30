@@ -32,7 +32,7 @@ class AwesomeButton extends StatelessWidget {
             padding: const EdgeInsets.all(20.0), // Adjust padding to control button size
             child: Text(
               buttonText,
-              style: formalStyle()
+              style: formalStyleSmaller()
             ),
           ),
         ),
